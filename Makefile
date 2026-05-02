@@ -10,7 +10,6 @@ TOPDIR:=${CURDIR}
 LC_ALL:=C
 LANG:=C
 export TOPDIR LC_ALL LANG
-
 world:
 
 include $(TOPDIR)/include/host.mk
