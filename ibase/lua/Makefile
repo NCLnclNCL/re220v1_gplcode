@@ -12,10 +12,7 @@ PKG_VERSION:=5.1.5
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://www.lua.org/ftp/ \
-	http://ftp.gwdg.de/pub/languages/lua/ \
-	http://mirrors.dotsrc.org/lua/ \
-	http://www.tecgraf.puc-rio.br/lua/ftp/
+PKG_SOURCE_URL:=http://www.lua.org/ftp/
 PKG_MD5SUM:=2e115fe26e435e33b0d5c022e4490567
 PKG_BUILD_PARALLEL:=1
 
