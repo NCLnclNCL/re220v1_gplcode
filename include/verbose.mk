@@ -51,7 +51,7 @@ ifeq ($(findstring s,$(OPENWRT_VERBOSE)),)
       SUBMAKE:=cmd() { $(MAKE) $$* && printf "$(_Y) make $$* finished$(_N)\n" >&8 || { printf "$(_Y) make $$* failed$(_N)\n" >&8; false; } }; cmd
     endif
   else
-    SILENT:=>/dev/null $(if $(findstring w,$(OPENWRT_VERBOSE)),,2>&1)
+    SILENT:
     export QUIET:=1
     SUBMAKE=cmd() { $(SILENT) $(MAKE) -s $$* < /dev/null || { echo "make $$*: build failed. Please re-run make with V=s to see what's going on"; false; } } 8>&1 9>&2; cmd
   endif
