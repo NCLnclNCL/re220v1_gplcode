@@ -1,0 +1,24 @@
+Source-Makefile: feeds/iplatform/opensource/openvpn/Makefile
+Package: openvpn-polarssl
+Menu: 1
+Submenu: VPN
+Version: 2.3.8-1
+Depends:  +kmod-tun +OPENVPN_polarssl_ENABLE_LZO:liblzo +OPENVPN_polarssl_ENABLE_IPROUTE2:ip +libpolarssl
+Menu-Depends: 
+Provides: 
+Build-Variant: polarssl
+Section: net
+Category: TP-LINK iplatform apps
+Title: Open source VPN solution using PolarSSL
+Maintainer: Mirko Vogt <mirko@openwrt.org>
+Source: openvpn-2.3.8.tar.gz
+Type: ipkg
+Description: Open source VPN solution using PolarSSL
+http://openvpn.net
+Mirko Vogt <mirko@openwrt.org>
+@@
+Config:
+	source "iplatform/stable/opensource/openvpn/Config-polarssl.in"
+@@
+
+

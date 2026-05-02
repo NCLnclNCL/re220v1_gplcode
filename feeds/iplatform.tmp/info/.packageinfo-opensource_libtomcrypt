@@ -1,0 +1,20 @@
+Source-Makefile: feeds/iplatform/opensource/libtomcrypt/Makefile
+Package: libtomcrypt
+Version: 1.17-1
+Depends:  +libtommath
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: a light crypt library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description:  libtommath is a c based crypt library
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+#  source "iplatform/stable/opensource/libtomcrypt/Config.in"
+@@
+
+

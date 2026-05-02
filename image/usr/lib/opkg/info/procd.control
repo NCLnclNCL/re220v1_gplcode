@@ -1,0 +1,13 @@
+Package: procd
+Version: 2015-01-25-7e6045fe4558e442e97e4a8967f08689d53f2cc4
+Depends: ubusd, ubus, libjson-script, ubox, libubox
+Provides: 
+Source: ibase/procd
+Section: base
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: model_mtk_mt76xx
+Installed-Size: 40747
+Description:  OpenWrt system process manager

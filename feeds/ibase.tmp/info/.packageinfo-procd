@@ -1,0 +1,17 @@
+Source-Makefile: feeds/ibase/procd/Makefile
+Package: procd
+Version: 2015-01-25-7e6045fe4558e442e97e4a8967f08689d53f2cc4
+Depends:  +ubusd +ubus +libjson-script +ubox +USE_EGLIBC:librt +libubox
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Title: OpenWrt system process manager
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: procd-2015-01-25-7e6045fe4558e442e97e4a8967f08689d53f2cc4.tar.gz
+Type: ipkg
+Description: OpenWrt system process manager
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

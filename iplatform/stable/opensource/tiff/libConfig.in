@@ -1,0 +1,16 @@
+choice
+	prompt "Built for static lib or shared lib"
+	default libtiff-sharedlib 
+	default libtiff-staticlib if minidlna-staticlink
+	depends PACKAGE_libtiff
+	help
+	  This option allows you to select the type while linking.
+
+	config libtiff-sharedlib
+		bool "shared lib"
+		depends !minidlna-staticlink
+
+	config libtiff-staticlib
+		bool "static lib"
+		depends minidlna-staticlink
+endchoice

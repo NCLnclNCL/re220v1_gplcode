@@ -1,0 +1,17 @@
+uci
+opkg
+libjson-c
+ubox
+rpcd
+zram-swap
+ca-certificates
+lua
+mtd
+procd
+base-files
+luci
+libubox
+uhttpd
+mountd
+ubus
+fstools

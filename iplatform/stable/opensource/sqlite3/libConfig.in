@@ -1,0 +1,16 @@
+choice
+	prompt "Built for static lib or shared lib"
+	default libsqlite3-sharedlib 
+	default libsqlite3-staticlib if minidlna-staticlink
+	depends PACKAGE_libsqlite3
+	help
+	  This option allows you to select the type while linking.
+
+	config libsqlite3-sharedlib
+		bool "shared lib"
+		depends !minidlna-staticlink
+
+	config libsqlite3-staticlib
+		bool "static lib"
+		depends minidlna-staticlink
+endchoice

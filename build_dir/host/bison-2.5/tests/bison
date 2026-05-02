@@ -1,0 +1,8 @@
+#! /bin/bash
+# tests/bison.  Generated from bison.in by configure.
+# Wrapper around a non installed bison to make it work as an installed one.
+
+# Use the shipped files, not those installed.
+BISON_PKGDATADIR='/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/bison-2.5/data'
+export BISON_PKGDATADIR
+exec $PREBISON '/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/bison-2.5/src/bison' ${1+"$@"}

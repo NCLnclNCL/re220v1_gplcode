@@ -1,0 +1,16 @@
+choice
+	prompt "Built for static lib or shared lib"
+	default libffmpeg-sharedlib 
+	default libffmpeg-staticlib if minidlna-staticlink
+	depends PACKAGE_libffmpeg-mini
+	help
+	  This option allows you to select the type while linking.
+
+	config libffmpeg-sharedlib
+		bool "shared lib"
+		depends !minidlna-staticlink
+
+	config libffmpeg-staticlib
+		bool "static lib"
+		depends minidlna-staticlink
+endchoice

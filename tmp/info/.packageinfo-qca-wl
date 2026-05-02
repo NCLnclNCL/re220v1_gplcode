@@ -1,0 +1,26 @@
+Source-Makefile: package/qca-wl/Makefile
+Package: kmod-qca-wifi-perf
+Submenu: Proprietary QCA WiFi driver
+Version: <LINUX_VERSION>+1.0-1
+Depends: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Kernel wireless driver for QCA chipsets (normal version)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description:  This package contains the proprietary wireless driver for the QCA chipset.
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+	config PACKAGE_QCA_WLAN_DIR
+		string "qca wireless driver directory path"
+		default ""
+		help
+          This is config for the qca wireless driver directory path.
+
+@@
+
+

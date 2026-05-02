@@ -1,0 +1,19 @@
+Source-Makefile: feeds/ibase/base-files/Makefile
+Package: base-files
+Version: 151-unknown
+Depends:  +netifd +libc +procd
+Menu-Depends: 
+Provides: 
+Build-Depends: opkg/host
+Section: base
+Category: Base system
+Title: Base filesystem for OpenWrt
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description:  This package contains a base filesystem and system scripts for OpenWrt.
+http://openwrt.org/
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

@@ -1,0 +1,13 @@
+Package: libuci
+Version: 2015-04-09.1-1
+Depends: libubox
+Provides: 
+Source: ibase/uci
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: model_mtk_mt76xx
+Installed-Size: 19370
+Description:  C library for the Unified Configuration Interface (UCI)

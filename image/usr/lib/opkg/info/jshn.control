@@ -1,0 +1,13 @@
+Package: jshn
+Version: 2014-08-04-dffbc09baf71b294185a36048166d00066d433b5
+Depends: libjson-c, libubox, libblobmsg-json
+Provides: 
+Source: ibase/libubox
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: model_mtk_mt76xx
+Installed-Size: 6150
+Description:  Library for parsing and generating JSON from shell scripts

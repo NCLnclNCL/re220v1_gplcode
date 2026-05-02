@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: ^([ 	]*#[ 	]*(include|import)[ 	]*)(KWSYS_HEADER)[ 	]*\(([^),]*)\) KWSYS_HEADER(%)=<cmsys/%>
+
+/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/cmake-2.8.9/Source/kwsys/Process.h.in
+@KWSYS_NAMESPACE@/Configure.h
+-
+
+/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/cmake-2.8.9/Source/kwsys/kwsysPrivate.h
+cmsys/Directory.hxx
+-
+cmsys/std/vector
+-
+
+/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/cmake-2.8.9/Source/kwsys/testProcess.c
+kwsysPrivate.h
+/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/cmake-2.8.9/Source/kwsys/kwsysPrivate.h
+cmsys/Process.h
+-
+Process.h.in
+/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/build_dir/host/cmake-2.8.9/Source/kwsys/Process.h.in
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+windows.h
+-
+unistd.h
+-
+be/kernel/OS.h
+-
+
+Source/cmsys/Configure.h
+
+Source/cmsys/Directory.hxx
+cmsys/Configure.h
+-
+
+Source/cmsys/Process.h
+cmsys/Configure.h
+-
+

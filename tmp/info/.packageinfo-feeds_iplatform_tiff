@@ -1,0 +1,60 @@
+Source-Makefile: package/feeds/iplatform/tiff/Makefile
+Package: libtiff
+Menu: 1
+Submenu: tiff
+Version: 4.0.3-1
+Depends:  +zlib +libjpeg
+Menu-Depends: 
+Provides: 
+Build-Depends: libtool libintl libiconv
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: TIFF library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: tiff-4.0.3.tar.gz
+Type: ipkg
+Description: TIFF library
+http://www.remotesensing.org/libtiff/
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+source "iplatform/stable/opensource/tiff/libConfig.in"
+@@
+
+Package: libtiffxx
+Submenu: tiff
+Version: 4.0.3-1
+Depends:  +libtiff +USE_UCLIBCXX:uclibcxx +USE_LIBSTDCXX:libstdcpp
+Menu-Depends: 
+Provides: 
+Build-Depends: libtool libintl libiconv
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: TIFF library(c++ bindings)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: tiff-4.0.3.tar.gz
+Type: ipkg
+Description: TIFF library(c++ bindings)
+http://www.remotesensing.org/libtiff/
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: tiff-utils
+Submenu: tiff
+Version: 4.0.3-1
+Depends:  +libtiff
+Menu-Depends: 
+Provides: 
+Build-Depends: libtool libintl libiconv
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: TIFF utilities
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: tiff-4.0.3.tar.gz
+Type: ipkg
+Description: TIFF utilities
+http://www.remotesensing.org/libtiff/
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

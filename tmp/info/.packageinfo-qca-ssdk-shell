@@ -1,0 +1,17 @@
+Source-Makefile: package/qca-ssdk-shell/Makefile
+Package: qca-ssdk-shell
+Version: 1
+Depends:  
+Menu-Depends: 
+Provides: 
+Section: QCA
+Category: Utilities
+Title: Shell application for QCA SSDK
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-ssdk-shell-.tar.gz
+Type: ipkg
+Description: Shell application for QCA SSDK
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

@@ -1,0 +1,10 @@
+prefix=/home/tp-link-hm/work/ipf_plm/ipv6_three_moed_merge/iplatform/board/model_mtk_mt76xx/gplcode/staging_dir/host
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+
+doctooldir=${datadir}/mm-common/doctool
+
+Name: mm-common-util
+Description: mm-common's doctool build utilities for the GNOME C++ bindings.
+Version: 0.9.5
+URL: http://www.gtkmm.org/

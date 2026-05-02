@@ -1,0 +1,161 @@
+#
+# Basic targets for special product
+#
+include $(TOPDIR)/basic.config
+##################################################################################################
+#
+#	kernel build.
+#
+##################################################################################################
+kernel_prep:
+	if [ -d $(SDK_BUILD_DIR) ]; then \
+		cp $(SDK_BUILD_DIR)/.config $(SDK_BUILD_DIR)/.config.temp; \
+		sed "s,^CONFIG_CROSS_COMPILE=.*,CONFIG_CROSS_COMPILE=\"${TOOLPATH}/bin/$(TOOLPREFIX)\",g" $(SDK_BUILD_DIR)/.config.temp > $(SDK_BUILD_DIR)/.config; \
+		rm $(SDK_BUILD_DIR)/.config.temp;\
+		$(SUBMAKE) $(SDK_FLAGS) -C $(SDK_BUILD_DIR) prepare ; \
+		if test -f "$(SDK_BUILD_DIR)/include/generated/mtd_partition.h"; then rm -rf $(SDK_BUILD_DIR)/include/generated/mtd_partition.h; fi;\
+		cp -af $(TOPDIR)/mtd_partition.h $(SDK_BUILD_DIR)/include/generated/mtd_partition.h;\
+		rm -fr $(SDK_BUILD_DIR)/include/asm; \
+		ln -sf ../arch/mips/include/asm $(SDK_BUILD_DIR)/include/asm; \
+		rm -fr $(SDK_BUILD_DIR)/arch/mips/include/asm/rt2880; \
+		ln -sf ./mach-ralink $(SDK_BUILD_DIR)/arch/mips/include/asm/rt2880; \
+		rm -fr $(SDK_BUILD_DIR)/include/linux/autoconf.h; \
+		ln -sf ../../include/generated/autoconf.h $(SDK_BUILD_DIR)/include/linux/autoconf.h; \
+		$(SUBMAKE) $(SDK_FLAGS) -C $(SDK_BUILD_DIR) dep ; \
+	fi
+	
+kernel_build: kernel_prep
+	@echo " Making Kernel Build Version $(KERNEL)" at `date`
+	$(SUBMAKE) $(SDK_FLAGS) -j$(HOST_NCPU) -C $(SDK_BUILD_DIR) $(KERNELTARGET) 
+	cd $(SDK_BUILD_DIR)/arch/$(KERNELARCH)/boot && \
+	cp -f $(KERNELTARGET) $(SDK_BUILD_DIR)/../ && \
+	rm -rf $(KERNELTARGET).lzma && \
+	$(LZMA_BIN) --best --keep $(KERNELTARGET) && \
+	cp -f $(KERNELTARGET).lzma  $(SDK_BUILD_DIR)/../$(KERNELTARGET).gz && \
+	cp -f $(SDK_BUILD_DIR)/vmlinux $(SDK_BUILD_DIR)/../vmlinux
+
+kernel_install:
+	@echo kernel: installing kernel
+	cp -f $(SDK_BUILD_DIR)/../vmlinux $(IMAGE_DIR)/vmlinux
+	cp -f $(SDK_BUILD_DIR)/../vmlinux.bin $(IMAGE_DIR)/vmlinux.bin
+	cp -f $(SDK_BUILD_DIR)/../vmlinux.bin.gz $(IMAGE_DIR)/vmlinux.bin.gz
+
+kernel_clean:
+	rm -f $(SDK_BUILD_DIR)/vmlinux
+	rm -f $(SDK_BUILD_DIR)/vmlinux.bin
+	rm -f $(SDK_BUILD_DIR)/vmlinux.bin.gz
+	cd $(SDK_BUILD_DIR) &&  $(SUBMAKE) $(SDK_FLAGS)  mrproper
+####################### kernel build end #############
+
+##################################################################################################
+#
+#	sdk apps build
+#	should build apps_lib first, then can build apps
+#	
+##################################################################################################
+sdk_apps_lib_install:
+	$(SUBMAKE)  $(SDK_FLAGS) -C $(SDK_APPS_LIB_PATH) install;
+
+sdk_apps_lib_build: 
+	$(SUBMAKE) $(SDK_FLAGS) -C $(SDK_APPS_LIB_PATH) all;
+
+sdk_apps_lib_clean:
+	$(SUBMAKE) $(SDK_FLAGS) -C $(SDK_APPS_LIB_PATH) clean
+
+sdk_apps_build: sdk_apps_lib_build 
+	$(SUBMAKE) CC=$(TOOLPREFIX)gcc LD=$(TOOLPREFIX)ld AR=$(TOOLPREFIX)ar -C $(SDK_APPS_PATH) all;
+
+sdk_apps_install: sdk_apps_lib_install
+	$(SUBMAKE) CC=$(TOOLPREFIX)gcc LD=$(TOOLPREFIX)ld AR=$(TOOLPREFIX)ar -C $(SDK_APPS_PATH) install
+
+sdk_apps_clean:	sdk_apps_lib_clean
+	$(SUBMAKE) CC=$(TOOLPREFIX)gcc LD=$(TOOLPREFIX)ld AR=$(TOOLPREFIX)ar -C $(SDK_APPS_PATH) clean
+
+##################################################################################################
+#
+#	uboot:build bootloader
+#
+##################################################################################################
+
+uboot_copy:
+	@echo "Just copy uboot for you"
+	cp -f $(UBOOT_COPY_DIR)/$(UBOOT_FILE) ${IMAGE_DIR}/$(UBOOT_FILE)
+	@echo "End copy uboot for you"
+
+#if you have uboot code,then you will execute uboot_build_copy
+#this rule will compile your uboot code and copy uboot to your image direcory
+uboot_prep:
+	if [ -d $(UBOOTDIR) ]; then \
+	cp $(UBOOTDIR)/.config  $(UBOOTDIR)/.config.temp;\
+	sed "s,^CONFIG_CROSS_COMPILER_PATH=.*,CONFIG_CROSS_COMPILER_PATH=\"${UBOOT_TOOLPATH}/bin\",g" $(UBOOTDIR)/.config.temp > $(UBOOTDIR)/.config ; \
+	rm $(UBOOTDIR)/.config.temp;\
+	fi
+uboot_build_copy: uboot_prep
+	@echo Making uboot at `date`
+	cd $(UBOOTDIR) && make all
+	cp -f $(UBOOTDIR)/uboot.bin $(IMAGE_DIR)/$(UBOOT_FILE)
+	@echo End Making uboot at `date`
+
+#new uboot rule for somebody may have no uboot code
+uboot_build:
+	@if test -f $(UBOOTDIR)/Makefile; then \
+	$(SUBMAKE) uboot_build_copy;\
+	else $(SUBMAKE) uboot_copy; \
+	fi
+
+uboot_clean:
+	@if test -f $(UBOOTDIR)/Makefile; then \
+		echo Making uboot clean ; \
+		cd $(UBOOTDIR) && $(SUBMAKE) $(SDK_FLAGS) distclean; \
+	else\
+		echo "Do nothing for clean uboot"; \
+	fi
+
+##################################################################################################
+#
+#	firmware build
+#	toolchain_lib_install: install C libarary
+#	tp_filesystem_install: cp the product's special filesystem
+#	firmware_clean: delete the files of rootfs.board
+#	firmware_prep: make filesystem at rootfs.board directory
+#	image_build: create firmware image by the rootfs.board directory
+##################################################################################################	
+toolchain_lib_install:	
+	cp -af `$(TOOLPATH)/bin/$(TOOLPREFIX)gcc -print-sysroot`/lib/* $(IMAGE_ROOTFS_DIR)/lib
+
+tp_filesystem_install:
+	rm -f $(BUILD_DIR)/build_dir/target-mipsel-openwrt-linux-uclibc/root-model_mtk_mt76xx/var
+	@cp -af $(BUILD_DIR)/build_dir/target-mipsel-openwrt-linux-uclibc/root-model_mtk_mt76xx/* $(IMAGE_ROOTFS_DIR)
+	ln -sf /tmp $(IMAGE_ROOTFS_DIR)/var
+
+#	@$(FAKEROOT) $(MAKE_DEV)
+
+image_clean:
+	rm -rf $(IMAGE_ROOTFS_DIR)/*
+
+image_prep: image_clean  tp_filesystem_install kernel_install toolchain_lib_install sdk_apps_install
+	@echo "do nothing" 
+
+image_build:image_prep
+	$(MAKE_SQUASHFS) $(IMAGE_ROOTFS_DIR) $(IMAGE_DIR)/squashfs -b  262144 -noappend -all-root
+	@$(PAD) -i$(IMAGE_DIR)/squashfs -p 0x500000
+
+
+
+##################################################################################################
+#
+#	sdk build
+#	build uboot, kernel, module, sdk_apps, IPF apps, firmware	
+#	IPF apps should build after kernel build, because IPF will build kmod, that will include kernel header files.
+#	such as button-poll will include "generated/bounds.h", the file is be auto create at kernel building.
+##################################################################################################	
+sdk: uboot_build kernel_build module_build sdk_apps_build tp_platform_build firmware_build
+
+sdk_menuconfig: kernel_menuconfig 
+	
+sdk_clean: firmware_clean uboot_clean kernel_clean module_clean tp_platform_clean  sdk_apps_clean
+	@if [ -e $(SDK_BUILD_DIR)/.config ]; then \
+		$(SUBMAKE) $(SDK_FLAGS) -C $(SDK_BUILD_DIR) clean; \
+	else\
+		echo $(SDK_BUILD_DIR);\
+	fi

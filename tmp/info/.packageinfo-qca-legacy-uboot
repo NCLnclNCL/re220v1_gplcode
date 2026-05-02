@@ -1,0 +1,170 @@
+Source-Makefile: package/qca-legacy-uboot/Makefile
+Package: qca-legacy-uboot-ap121
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: ap121
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board ap121
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board ap121
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-ap135
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: ap135
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board ap135
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board ap135
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-ap136
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: ap136
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board ap136
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board ap136
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-db12x
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: db12x
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board db12x
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board db12x
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-cus227
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: cus227
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board cus227
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board cus227
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-ap152-8M
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: ap152-8M
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board ap152-8M
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board ap152-8M
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-ap152-16M
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: ap152-16M
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board ap152-16M
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board ap152-16M
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+Package: qca-legacy-uboot-ap143
+Version: 1
+Depends:  @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: ap143
+Section: boot
+Category: Boot Loaders
+Title: U-boot for the board ap143
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: qca-legacy-uboot-.tar.gz
+Type: ipkg
+Description: U-boot for the board ap143
+http://www.denx.de/wiki/U-Boot
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+  
+  
+@@
+
+

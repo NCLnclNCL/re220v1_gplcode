@@ -1,0 +1,14 @@
+Package: busybox
+Version: 1.22.1-3
+Depends: 
+Provides: 
+Source: iplatform/stable/opensource/busybox
+Section: TP-LINK
+Status: unknown ok not-installed
+Essential: yes
+Priority: optional
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: model_mtk_mt76xx
+Installed-Size: 273209
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.

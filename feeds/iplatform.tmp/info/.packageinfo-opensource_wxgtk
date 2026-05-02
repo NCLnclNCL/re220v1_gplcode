@@ -1,0 +1,20 @@
+Source-Makefile: feeds/iplatform/opensource/wxgtk/Makefile
+Package: wxgtk
+Version: 2.8.12-1
+Depends:  +zlib +libstdcpp +libpthread
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: A c++ frame library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description:  wxgtk is a c++ based library for amule
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+#  source "iplatform/stable/opensource/wxgtk/Config.in"
+@@
+
+

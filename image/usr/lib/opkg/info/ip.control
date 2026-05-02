@@ -1,0 +1,13 @@
+Package: ip
+Version: 3.3.0-1
+Depends: 
+Provides: 
+Source: iplatform/stable/opensource/iproute2
+Section: TP-LINK
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: model_mtk_mt76xx
+Installed-Size: 110729
+Description:  Routing control utility

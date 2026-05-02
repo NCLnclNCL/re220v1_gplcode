@@ -1,0 +1,93 @@
+#
+# NOTE! Don't add files that are generated in specific
+# subdirectories here. Add them in the ".gitignore" file
+# in that subdirectory instead.
+#
+# NOTE! Please use 'git ls-files -i --exclude-standard'
+# command after changing this file, to see if there are
+# any tracked files which get ignored after the change.
+#
+# Normal rules
+#
+.*
+*.o
+*.o.*
+*.a
+*.s
+*.ko
+*.so
+*.so.dbg
+*.mod.c
+*.i
+*.lst
+*.symtypes
+*.order
+modules.builtin
+*.elf
+*.bin
+*.gz
+*.bz2
+*.lzma
+*.lzo
+*.patch
+*.gcno
+
+#
+# Top-level generic files
+#
+/tags
+/TAGS
+/linux
+/vmlinux
+/vmlinuz
+/System.map
+/Module.markers
+Module.symvers
+
+#
+# git files that we don't want to ignore even it they are dot-files
+#
+!.gitignore
+!.mailmap
+
+dept_table.log
+deptables.log
+/scripts/kconfig/dep_common.h
+/scripts/kconfig/dep_tab.c
+/scripts/kconfig/dep_tree.c
+/scripts/kconfig/dep_util.c
+/scripts/kconfig/dept_tab.c
+/scripts/kconfig/confdata.c
+/scripts/kconfig/expr.h
+/scripts/kconfig/mconf.c
+/scripts/kconfig/symbol.c
+/scripts/kconfig/zconf.tab.c_shipped
+#
+# Generated include files
+#
+include/config
+include/linux/version.h
+include/generated
+
+# stgit generated dirs
+patches-*
+
+# quilt's files
+patches
+series
+
+# cscope files
+cscope.*
+ncscope.*
+
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+/ralink/Kconfig.source
+
+*.orig
+*~
+\#*#

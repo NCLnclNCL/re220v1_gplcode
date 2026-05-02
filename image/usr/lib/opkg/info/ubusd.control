@@ -1,0 +1,13 @@
+Package: ubusd
+Version: 2015-05-25-f361bfa5fcb2daadf3b160583ce665024f8d108e
+Depends: libubox
+Provides: 
+Source: ibase/ubus
+Section: base
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: model_mtk_mt76xx
+Installed-Size: 9661
+Description:  OpenWrt RPC daemon

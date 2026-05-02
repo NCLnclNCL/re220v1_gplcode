@@ -1,0 +1,126 @@
+Source-Makefile: feeds/iplatform/opensource/valgrind/Makefile
+Package: valgrind
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  +libpthread +librt
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: 	Valgrind is an award-winning suite of tools for debugging and
+	profiling Linux programs. With the tools that come with Valgrind,
+	you can automatically detect many memory management and threading
+	bugs, avoiding hours of frustrating bug-hunting, making your
+	programs more stable. You can also perform detailed profiling,
+	to speed up and reduce memory use of your programs.
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: valgrind-cachegrind
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  valgrind
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux (cache profiling)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: debugging and profiling tools for Linux (cache profiling)
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: valgrind-callgrind
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  valgrind
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux (callgraph profiling)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: debugging and profiling tools for Linux (callgraph profiling)
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: valgrind-drd
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  valgrind
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux (thread error detection)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: debugging and profiling tools for Linux (thread error detection)
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: valgrind-massif
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  valgrind
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux (heap profiling)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: debugging and profiling tools for Linux (heap profiling)
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: valgrind-helgrind
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  valgrind
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux (thread debugging)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: debugging and profiling tools for Linux (thread debugging)
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: valgrind-vgdb
+Submenu: Debug
+Version: 3.10.1-1
+Depends:  valgrind
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: debugging and profiling tools for Linux (GDB interface)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: valgrind-3.10.1.tar.bz2
+Type: ipkg
+Description: debugging and profiling tools for Linux (GDB interface)
+http://www.valgrind.org
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

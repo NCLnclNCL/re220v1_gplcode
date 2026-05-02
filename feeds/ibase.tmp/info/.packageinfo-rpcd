@@ -1,0 +1,48 @@
+Source-Makefile: feeds/ibase/rpcd/Makefile
+Package: rpcd
+Version: 2014-01-12-0c4e97b4e7b440d02aec3aff9d06c9bc93717571
+Depends:  +libubus +libubox +libuci +libblobmsg-json
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Title: OpenWrt ubus RPC backend server
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: rpcd-2014-01-12-0c4e97b4e7b440d02aec3aff9d06c9bc93717571.tar.gz
+Type: ipkg
+Description:  This package provides the UBUS RPC backend server to expose various
+ functionality to frontend programs via JSON-RPC.
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: rpcd-mod-file
+Version: 2014-01-12-0c4e97b4e7b440d02aec3aff9d06c9bc93717571
+Depends:  +libubus +libubox rpcd
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Title: OpenWrt ubus RPC backend server (file plugin)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: rpcd-2014-01-12-0c4e97b4e7b440d02aec3aff9d06c9bc93717571.tar.gz
+Type: ipkg
+Description:     Provides ubus calls for file and directory operations.
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+Package: rpcd-mod-iwinfo
+Version: 2014-01-12-0c4e97b4e7b440d02aec3aff9d06c9bc93717571
+Depends:  +libubus +libubox rpcd +libiwinfo
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Title: OpenWrt ubus RPC backend server (iwinfo plugin)
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: rpcd-2014-01-12-0c4e97b4e7b440d02aec3aff9d06c9bc93717571.tar.gz
+Type: ipkg
+Description:     Provides ubus calls for accessing iwinfo data.
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

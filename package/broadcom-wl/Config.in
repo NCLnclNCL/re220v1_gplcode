@@ -1,0 +1,9 @@
+config BCM_SDK6X
+	bool "use BCM SDK6.X"
+	default n
+    depends PACKAGE_kmod-brcm-wl
+
+config BCM_SDK7X
+	bool "use BCM SDK7.X"
+	default n
+    depends PACKAGE_kmod-brcm-wl

@@ -1,0 +1,83 @@
+Source-Makefile: package/feeds/iplatform/iplatform-extern-libs/Makefile
+Package: libifaddrs
+Submenu: iplatform-extern-libs
+Version: 1.0.0
+Depends:  @IFADDRS
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: extern libs for API of network interface
+Maintainer: Zhang Longwei <zhanglongwei@tp-link.net>
+Source: 
+Type: ipkg
+Description:  Interface for network address. 
+ This is an implementation of libifaddrs.
+Zhang Longwei <zhanglongwei@tp-link.net>
+@@
+
+Package: libversionsort
+Submenu: iplatform-extern-libs
+Version: 1.0.0
+Depends:  @VERSIONSORT
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: extern libs for API of network interface
+Maintainer: Tristan Xiao <xiaolongde@tp-link.com.cn>
+Source: 
+Type: ipkg
+Description: extern libs for API of network interface
+Tristan Xiao <xiaolongde@tp-link.com.cn>
+@@
+
+Package: libopenat
+Submenu: iplatform-extern-libs
+Version: 1.0.0
+Depends:  @OPENAT
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: extern libs for API of network interface
+Maintainer: Tristan Xiao <xiaolongde@tp-link.com.cn>
+Source: 
+Type: ipkg
+Description: extern libs for API of network interface
+Tristan Xiao <xiaolongde@tp-link.com.cn>
+@@
+
+Package: libunshare
+Submenu: iplatform-extern-libs
+Version: 1.0.0
+Depends:  @UNSHARE
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: extern libs for API of network interface
+Maintainer: Tristan Xiao <xiaolongde@tp-link.com.cn>
+Source: 
+Type: ipkg
+Description: extern libs for API of network interface
+Tristan Xiao <xiaolongde@tp-link.com.cn>
+@@
+
+Package: libfdopendir
+Submenu: iplatform-extern-libs
+Version: 1.0.0
+Depends:  @FDOPENDIR
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: extern libs for API of network interface
+Maintainer: Tristan Xiao <xiaolongde@tp-link.com.cn>
+Source: 
+Type: ipkg
+Description: extern libs for API of network interface
+Tristan Xiao <xiaolongde@tp-link.com.cn>
+@@
+
+

@@ -1,0 +1,22 @@
+config minidlna-parse-media
+	bool "parsing media files support"
+	default y
+	depends PACKAGE_minidlna
+	select  PACKAGE_libexif
+	select  PACKAGE_libflac
+	select  PACKAGE_libjpeg
+	select  PACKAGE_libtiff
+	select  PACKAGE_libvorbis
+	depends PACKAGE_libffmpeg-custom||PACKAGE_libffmpeg-full||PACKAGE_libffmpeg-mini
+	help
+	  Feature: provide parsing media files support.
+
+config minidlna-staticlink
+	bool "linked with some static libs"
+	default n
+	depends PACKAGE_minidlna
+	select libffmpeg-staticlib if minidlna-parse-media
+	select libsqlite3-staticlib
+	select libtiff-staticlib if minidlna-parse-media
+	select libflac-staticlib if minidlna-parse-media
+	select libvorbis-staticlib if minidlna-parse-media

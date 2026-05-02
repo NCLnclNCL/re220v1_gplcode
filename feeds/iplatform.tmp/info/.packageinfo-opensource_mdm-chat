@@ -1,0 +1,18 @@
+Source-Makefile: feeds/iplatform/opensource/mdm-chat/Makefile
+Package: mdm-chat
+Submenu: 3G/4G Support
+Version: 2.4.5-8
+Depends:  +pppd
+Menu-Depends: 
+Provides: 
+Section: TP-LINK
+Category: TP-LINK iplatform apps
+Title: Establish conversation with a modem
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: This package contains an utility to establish conversation with other PPP servers (via a modem).
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

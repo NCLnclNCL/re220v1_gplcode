@@ -1,0 +1,17 @@
+Source-Makefile: feeds/ibase/ca-certificates/Makefile
+Package: ca-certificates
+Version: 20140223
+Depends:  
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Title: System CA certificates
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: ca-certificates_20140223.tar.xz
+Type: ipkg
+Description: System CA certificates
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+
