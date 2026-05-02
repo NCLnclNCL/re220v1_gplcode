@@ -1,9 +1,3 @@
-# 
-# Copyright (C) 2006-2012 OpenWrt.org
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
-#
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=xz
@@ -19,9 +13,17 @@ include $(INCLUDE_DIR)/host-build.mk
 
 HOST_LDFLAGS += $(HOST_STATIC_LINKING)
 
+define Host/Configure
+	(cd $(HOST_BUILD_DIR); \
+		./configure \
+			--disable-assembler \
+			--prefix=$(STAGING_DIR_HOST) \
+	)
+endef
+
 define Host/Install
 	+$(MAKE) $(HOST_JOBS) -C $(HOST_BUILD_DIR) install xzlinks="unxz xzcat" \
-		AM_LDFLAGS="$(if $(HOST_STATIC_LINKING),-all-static)"
+		AM_LDFLAGS="$(if $(HOST_STATIC_LINKING),-all-static --disable-assembler)"
 endef
 
 $(eval $(call HostBuild))
