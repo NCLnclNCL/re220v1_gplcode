@@ -52,7 +52,7 @@ ifeq ($(findstring s,$(OPENWRT_VERBOSE)),)
     endif
   else
     SILENT:
-    export QUIET:=0
+    export QUIET:=1
     SUBMAKE=cmd() { $(SILENT) $(MAKE) -s $$* < /dev/null || { echo "make $$*: build failed. Please re-run make with V=s to see what's going on"; false; } } 8>&1 9>&2; cmd
   endif
 
